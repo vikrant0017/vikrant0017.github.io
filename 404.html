@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>404 - Page Not Found</title>
+        <style>
+            :root {
+                --bg: #1a1b26;
+                --fg: #c0caf5;
+                --fg-dim: #a9b1d6;
+                --fg-muted: #565f89;
+                --comment: #565f89;
+                --accent: #7aa2f7;
+                --purple: #bb9af7;
+                --red: #f7768e;
+                --orange: #ff9e64;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family:
+                    "JetBrains Mono", "Fira Code", "Consolas", "Monaco",
+                    monospace;
+                line-height: 1.8;
+                color: var(--fg);
+                background-color: var(--bg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                padding: 20px;
+            }
+
+            .error-container {
+                max-width: 600px;
+                text-align: center;
+            }
+
+            .error-code {
+                font-size: 6em;
+                font-weight: 700;
+                color: var(--red);
+                margin-bottom: 20px;
+                letter-spacing: -0.02em;
+            }
+
+            .error-type {
+                font-size: 1.5em;
+                color: var(--orange);
+                margin-bottom: 30px;
+                text-transform: lowercase;
+            }
+
+            .error-message {
+                color: var(--fg-dim);
+                font-size: 1em;
+                margin-bottom: 40px;
+                line-height: 1.6;
+            }
+
+            .terminal-line {
+                text-align: left;
+                margin: 10px 0;
+                font-size: 0.9em;
+            }
+
+            .prompt {
+                color: var(--purple);
+            }
+
+            .command {
+                color: var(--accent);
+            }
+
+            .comment {
+                color: var(--comment);
+            }
+
+            .link {
+                display: inline-block;
+                margin-top: 30px;
+                padding: 12px 24px;
+                background-color: transparent;
+                color: var(--accent);
+                text-decoration: none;
+                border: 1px solid var(--accent);
+                transition: all 0.2s ease;
+                font-size: 0.95em;
+            }
+
+            .link:hover {
+                background-color: var(--accent);
+                color: var(--bg);
+            }
+
+            .ascii-art {
+                color: var(--comment);
+                font-size: 0.7em;
+                margin-bottom: 30px;
+                white-space: pre;
+                line-height: 1.2;
+            }
+
+            @keyframes blink {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0;
+                }
+            }
+
+            .cursor {
+                animation: blink 1s step-end infinite;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="error-container">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-type">page not found</h2>
+
+            <div class="error-message">
+                <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command"
+                        >ls -la <span id="ls-current-path"></span
+                    ></span>
+                </div>
+                <div class="terminal-line">
+                    <span class="comment"
+                        >// error: cannot access '<span id="current-path"></span
+                        >': no such file or directory</span
+                    >
+                    <script>
+                        document.getElementById("ls-current-path").textContent =
+                            window.location.pathname;
+                        document.getElementById("current-path").textContent =
+                            window.location.pathname;
+                    </script>
+                </div>
+                <div class="terminal-line">
+                    <span class="comment"
+                        >// the resource you're looking for doesn't exist</span
+                    >
+                </div>
+            </div>
+
+            <a href="/" class="link">← return home</a>
+
+            <div style="margin-top: 40px">
+                <span class="prompt">~</span> <span class="cursor">_</span>
+            </div>
+        </div>
+    </body>
+</html>
