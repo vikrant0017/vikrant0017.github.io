@@ -16,7 +16,6 @@ Passionate about building scalable backend architectures and exploring AI/ML and
 
 * **Georgia Institute of Technology**
   *M.S. in Computer Science (Machine Learning)* — Jan 2022 – Dec 2024 — GPA: 3.8
-
 * **Aarupadai Veedu Institute of Technology**
   *B.E. in Computer Engineering* — Aug 2015 – May 2019 — GPA: 9.0
 
